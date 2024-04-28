@@ -99,19 +99,6 @@ namespace ItemSystem
 			}
 		}
 		
-		public void PlayAnim(string id, string idAnim)
-		{
-			if (_items.TryGetValue(id, out List<Item> items))
-			{
-				foreach (var item in items)
-				{
-					if (item.Anim == null) continue;
-
-					item.Anim.Play(idAnim);
-				}
-			}
-		}
-		
 		public void SetActiveBtn(string id, bool value)
 		{
 			if (_items.TryGetValue(id, out List<Item> items))
@@ -132,18 +119,6 @@ namespace ItemSystem
 				{
 					if (item.Btn == null) continue;
 					item.Btn.onClick.AddListener(() => func(item.Parm));
-				}
-			}
-		}
-
-		public void SetText(string id, string text)
-		{
-			if (_items.TryGetValue(id, out List<Item> items))
-			{
-				foreach (var item in items)
-				{
-					if (item.TextTMP == null) continue;
-					item.TextTMP.text = text;
 				}
 			}
 		}

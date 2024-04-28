@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace WeatherSystem
 {
-    public class WeatherBtn : MonoBehaviour
+    public class WeatherCard : MonoBehaviour
     {
         [SerializeField] private TMP_Text _name;
         [SerializeField] private Image _icon;

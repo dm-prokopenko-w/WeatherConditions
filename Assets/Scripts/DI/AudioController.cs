@@ -2,6 +2,7 @@ using CoroutineSystem;
 using Game;
 using ItemSystem;
 using PopupSystem;
+using UISystem;
 using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
@@ -17,6 +18,7 @@ namespace AudioSystem
         [Inject] private PopupController _popupController;
         [Inject] private AssetLoader _assetLoader;
         [Inject] private CoroutineHandler _coroutineHandler;
+        [Inject] private GameSceneUIController _uiController;
 
         private Music _music;
         private Sound _sound;
@@ -40,6 +42,12 @@ namespace AudioSystem
                 SetToggle(ToggleViewID + ToggleObject.Music), 
                 SetSave(MusicSaveKey),
                 data);
+            
+            _uiController.OnResetWindow.AddListener(() =>
+            {
+                _sound.ResetWindow(ResetWindow(SoundSaveKey));
+                _music.ResetWindow(ResetWindow(MusicSaveKey));
+            });
         }
 
         public void AddMusicSource(AudioSource source) => _music.AddMusicSource(source, _coroutineHandler);
@@ -70,6 +78,17 @@ namespace AudioSystem
             return save;
         }
 
+        private AudioData ResetWindow(string key)
+        {
+            var save = new AudioData()
+            {
+                IsEnable = false,
+                Volume = 1f
+            };
+            _saveController.Save(key, save);
+            return save;
+        }
+        
         public void AddSoundButton(SoundObject type, Button button) => _sound.AddSoundButton(type, button, _coroutineHandler);
     }
 
@@ -88,6 +107,12 @@ namespace AudioSystem
             _toggle = toggle;
             _toggle.isOn = !save.IsEnable;
             _toggle.onValueChanged.AddListener((value) => { save.IsEnable = !value; });
+        }
+        
+        public void ResetWindow(AudioData data)
+        {
+            _toggle.isOn = !data.IsEnable;
+            _slider.value = data.Volume;
         }
     }
 
