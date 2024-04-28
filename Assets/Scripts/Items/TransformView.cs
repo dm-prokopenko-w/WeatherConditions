@@ -10,11 +10,13 @@ namespace LevelsSystem
         [Inject] private ItemController _itemController;
         
         [SerializeField] private TransformObject _type;
+        [SerializeField] private Transform _tr;
 
         [Inject]
         public void Construct()
         {
-            _itemController.AddItemUI(TransformViewID + _type, new Item(transform));
+            if (_tr == null) _tr = transform;
+            _itemController.AddItemUI(TransformViewID + _type, new Item(_tr));
         }
     } 
 }

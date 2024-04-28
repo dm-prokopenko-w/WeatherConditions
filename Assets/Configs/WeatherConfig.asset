@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 920461a5e16a80446ac3f6e0747cbfc0, type: 3}
+  m_Name: WeatherConfig
+  m_EditorClassIdentifier: 
+  Id: WeatherConfig
+  Prefab: {fileID: 2514887506080180525, guid: be63f00dbe9b868489d270d51a159cba, type: 3}
+  CityNames:
+  - Kyiv
+  - Kharkiv
+  - 'Lviv '
+  - Dnipro
+  - Sumy
+  - Zhytomyr
+  - Vinnytsia
+  - Chernihiv
+  - Rivne

@@ -3,9 +3,7 @@ namespace Game
     public static class Constants
     {
         public const string AudioConfigPath = "AudioConfig";
-        public const string PlayerConfigPath = "PlayerConfig";
-        public const string LevelsConfigPath = "LevelsConfig";
-        public const string VFXConfigPath = "VFXConfig";
+        public const string WeatherConfigPath = "WeatherConfig";
 
         public const string ActivePopupID = "ActivePopup";
         
@@ -26,7 +24,7 @@ namespace Game
         public const string EnemyIdle = "Idle";
         public const string EnemyRun = "Run";
         
-        public const string EnemyTag = "Enemy";
+        public static string Temperature(float temp) => $"Temperature: {temp}°C";
 
         public const string KillsCountText = "Kill: ";
         public const string LevelsCountText = "Level: ";
@@ -35,6 +33,8 @@ namespace Game
         public const string SoundSaveKey = "SoundSaveKey";
         
         public const string LinkedinURL = "https://www.linkedin.com/in/prokopenko-dmytro/";
+        public static string URLWeather(string city) => $"https://api.openweathermap.org/data/2.5/weather?q={city}&appid=d75e8f6a11cf5d8048f9066caa637070&units=metric";
+        public static string URLImageUrl(string icon) =>  $"http://openweathermap.org/img/wn/{icon}.png";
 
         public const int DistEnemyMoveToPlayer = 50;
         public const int LevelStep = 105;
@@ -63,17 +63,8 @@ namespace Game
             ActiveSoundsParent,
             InactiveSoundsParent,
  
-            ActiveLevelsParent,
-            InactiveLevelsParent,
-
-            ActiveBulletParent,
-            InactiveBulletParent,
-            
-            ActiveEnemyParent,
-            InactiveEnemyParent,
-            
-            ActiveVFXParent,
-            InactiveVFXParent,
+            ActiveWeatherParent,
+            InactiveWeatherParent,
         }
 
         public enum ButtonObject
