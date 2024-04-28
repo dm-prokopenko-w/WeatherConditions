@@ -84,6 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3985944867474284795}
+  - component: {fileID: 3417553691680426073}
   m_Layer: 5
   m_Name: HorizontalPrefab
   m_TagString: Untagged
@@ -111,6 +112,20 @@ RectTransform:
   m_AnchoredPosition: {x: 115, y: -70}
   m_SizeDelta: {x: 230, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3417553691680426073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5257757058657495701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ecf806f77818c44a3f7bf321ba13c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rect: {fileID: 3985944867474284795}
+  _scaleChild: {fileID: 6853834347143223910}
 --- !u!1 &7092300826556806492
 GameObject:
   m_ObjectHideFlags: 0
